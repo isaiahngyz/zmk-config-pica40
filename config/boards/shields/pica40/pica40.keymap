@@ -4,11 +4,10 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define QWERTY 0
-#define GAME 1
-#define NAV 2
-#define NUM 3
-#define SYM 4
-#define FUNC 5
+#define NAV 1
+#define NUM 2
+#define SYM 3
+#define FUNC 4
 
 / {
 
