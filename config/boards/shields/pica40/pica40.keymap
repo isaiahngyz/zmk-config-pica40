@@ -23,7 +23,6 @@
 / {
 
     behaviors {
-
         ht: hold_tap {
             label = "hold_tap";
             compatible = "zmk,behavior-hold-tap";
@@ -33,6 +32,25 @@
             quick-tap-ms = <150>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
+        };
+
+        tm: thumb_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "THUMB_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <160>;
+            quick-tap-ms = <160>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        lh: layer_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_HOLD";
+            #binding-cells = <2>;
+            tapping-term-ms = <160>;
+            quick-tap-ms = <160>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
         };
 
         // Easy alt-tab with alt+backspace thumb using mod-morphs
@@ -60,7 +78,7 @@
             timeout-ms = <50>;
             key-positions = <14 17>;
             layers = <0>;
-            bindings = <&kp CAPS>;
+            bindings = <&caps_word>;
         };
     };
 
@@ -72,7 +90,7 @@
                            &kp Q       &kp W       &kp E        &kp R        &kp T        &kp Y  &kp U        &kp I        &kp O       &kp P
                 &kp EQUAL  &ht LGUI A  &ht LALT S  &ht LCTRL D  &ht LSHFT F  &kp G        &kp H  &ht RSHFT J  &ht RCTRL K  &ht LALT L  &ht RGUI SEMI  &kp SQT
                 &kp MINUS  &kp Z       &kp X       &kp C        &kp V        &kp B        &kp N  &kp M        &kp COMMA    &kp DOT     &kp FSLH       &kp GRAVE
-                                            &lt FUNC ESC  &lt NUM TAB  &lh SYM SPACE    &lt FUNC ENTER  &lh NAV BSPC  &lt RALT DEL
+                                            &lt FUNC ESC  &lt NUM TAB  &lh SYM SPACE    &lt FUNC ENTER  &lh NAV BSPC  &tm RALT DEL
                 >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -83,7 +101,7 @@
                                  &kp Q   &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I      &kp O    &kp P
                 &ht LALT EQUAL   &kp A   &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K      &kp L    &kp SEMI  &ht LGUI SQT
                 &ht LSHFT MINUS  &kp Z   &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &tog GAME
-                            &ht LCTRL ESC  &lt NUM TAB  &lh SYM SPACE    &lt FUNC ENTER  &lh NAV BSPC  &lt RALT DEL
+                            &ht LCTRL ESC  &lt NUM TAB  &lh SYM SPACE    &lt FUNC ENTER  &lh NAV BSPC  &tm RALT DEL
                 >;
         };
 
@@ -108,7 +126,7 @@
         symbol_layer {
             bindings = <
                            &kp PIPE  &kp AMPS  &kp STAR   &kp LPAR   &kp RPAR        &none  &none      &none      &none     &none
-                &kp LCTRL  &kp lt    &kp DLLR  &kp PRCNT  &kp CARET  &kp LBRC        &none  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &none
+                &kp LCTRL  &kp LT    &kp DLLR  &kp PRCNT  &kp CARET  &kp LBRC        &none  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &none
                 &kp BSPC   &kp GT    &kp EXCL  &kp AT     &kp HASH   &kp RBRC        &none  &none      &none      &none     &none     &none
                                                    &kp TILDE  &tog GAME  &trans    &none  &none  &none
                 >;
