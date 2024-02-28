@@ -37,6 +37,7 @@
             #binding-cells = <0>;
             bindings = <&kp SPACE>, <&kp TAB>;
             mods = <MOD_LALT>;
+            keep-mods = <(MOD_LALT)>;
         };
         lt_spc: layer_tap_space_tab {
             compatible = "zmk,behavior-hold-tap";
