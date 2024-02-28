@@ -69,36 +69,36 @@
 
         nav_layer {
             bindings = <
-                       &none     &none     &none      &none      &none        &none         &none     &kp PG_DN  &kp PG_UP  &none
-                &none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp G        &kp LA(UP)    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp INS
-                &none  &none     &none     &none      &none      &none        &kp LA(DOWN)  &kp HOME  &kp END    &none      &none      &none
+                       &none     &none     &none      &none      &none        &none    &none     &kp UP     &none      &kp PG_UP
+                &none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none        &none    &kp LEFT  &kp DOWN   &kp RIGHT  &kp PG_DN  &kp INS
+                &none  &none     &none     &none      &none      &none        &none    &kp HOME  &kp END    &none      &none      &none
                                                      &none  &trans  &none    &none  &none  &none
                 >;
         };
 
         number_layer {
             bindings = <
-                           &kp BSLH   &kp N7  &kp N8  &kp N9  &kp N0          &none  &none      &none      &none     &none
-                &kp LCTRL  &kp COMMA  &kp N4  &kp N5  &kp N6  &kp LBKT        &none  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &none
-                &kp DEL    &kp DOT    &kp N1  &kp N2  &kp N3  &kp RBKT        &none  &none      &none      &none     &none     &none
-                                                &none  &none  &none    &trans  &none  &none
+                          &kp PLUS   &kp N7  &kp N8  &kp N9  &kp N0         &none  &none      &none      &none     &none
+                &kp STAR  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp DEL        &none  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &kp LCTRL
+                &kp FSLH  &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp ENTER      &none  &none      &none      &none     &none     &kp BSPC
+                                             &none   &none  &none           &trans &none      &none
                 >;
         };
 
         symbol_layer {
             bindings = <
-                           &kp PIPE  &kp AMPS  &kp STAR   &kp LPAR   &kp RPAR        &none  &none      &none      &none     &none
-                &kp LCTRL  &kp LT    &kp DLLR  &kp PRCNT  &kp CARET  &kp LBRC        &none  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &none
-                &kp BSPC   &kp GT    &kp EXCL  &kp AT     &kp HASH   &kp RBRC        &none  &none      &none      &none     &none     &none
+                           &kp EXCL  &kp AT    &kp HASH   &kp DLLR   &kp PRCNT       &kp CARET  &kp AMPS   &kp STAR   &kp GRAVE  &kp TILDE
+                &none      &kp DQT   &kp LBKT  &kp LBRC   &kp LPAR   &kp LT          &kp FSLH   &kp MINUS  &kp EQUAL  &kp COLON  &kp SEMI   &kp LCTRL
+                &none      &kp SQT   &kp RBKT  &kp RBRC   &kp RPAR   &kp GT          &kp BSLH   &kp UNDER  &kp PLUS   &kp PIPE   &kp QMARK  &kp BSPC
                                                    &none  &none  &trans    &none  &none  &none
                 >;
         };
 
         function_layer {
             bindings = <
-                           &kp F12  &kp F7  &kp F8  &kp F9  &kp PSCRN              &bt BT_CLR  &none      &bt BT_NXT  &none     &none
-                &kp LCTRL  &kp F11  &kp F4  &kp F5  &kp F6  &kp PAUSE_BREAK        &none       &kp RSHFT  &kp RCTRL   &kp LALT  &kp RGUI  &none
-                &kp ENTER  &kp F10  &kp F1  &kp F2  &kp F3  &kp CAPS               &none       &none      &none       &none     &none     &none
+                             &kp F1  &kp F2   &kp F3   &kp F4   &kp PSCRN              &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3    &none
+                &kp LCTRL    &kp F5  &kp F6   &kp F7   &kp F8   &kp PAUSE_BREAK        &bt BT_CLR       &kp RSHFT  &kp RCTRL   &kp LALT  &kp RGUI  &none
+                &bootloader  &kp F9  &kp F10  &kp F11  &kp F12  &kp CAPS               &out OUT_TOG       &none      &none       &none     &none     &bootloader   
                                                  &trans  &kp C_NEXT  &kp C_PP    &none  &trans  &none
                 >;
         };
