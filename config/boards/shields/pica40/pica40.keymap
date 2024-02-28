@@ -4,69 +4,23 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define QWERTY 0
-#define GAME 1
-#define NAV 2
-#define NUM 3
-#define SYM 4
-#define FUNC 5
-
-&mt {
-    tapping-term-ms = <160>;
-    flavor = "tap-preferred";
-};
-
-&lt {
-    tapping-term-ms = <160>;
-    flavor = "tap-preferred";
-};
+#define NAV 1
+#define NUM 2
+#define SYM 3
+#define FUNC 4
 
 / {
 
     behaviors {
-        hm: homerow_mods {
+        ht: hold_tap {
+            label = "hold_tap";
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <160>;
-            quick-tap-ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-        hr: homerow_mods_ring_finger {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_RING_FINGER";
-            #binding-cells = <2>;
-            tapping-term-ms = <190>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-        hp: homerow_mods_pinky_finger {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_PINKY_FINGER";
-            #binding-cells = <2>;
             tapping-term-ms = <220>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            quick-tap-ms = <150>;
+            global-quick-tap;
             bindings = <&kp>, <&kp>;
-        };
-        tm: thumb_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "THUMB_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <160>;
-            quick-tap-ms = <160>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-        lh: layer_hold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_HOLD";
-            #binding-cells = <2>;
-            tapping-term-ms = <160>;
-            quick-tap-ms = <160>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
         };
 
         // Easy alt-tab with alt+backspace thumb using mod-morphs
@@ -104,47 +58,38 @@
         default_layer {
             bindings = <
                            &kp Q       &kp W       &kp E        &kp R        &kp T        &kp Y  &kp U        &kp I        &kp O       &kp P
-                &kp EQUAL  &hp LGUI A  &hr LALT S  &hm LCTRL D  &hm LSHFT F  &kp G        &kp H  &hm RSHFT J  &hm RCTRL K  &hr LALT L  &hp RGUI SEMI  &kp SQT
+                &kp EQUAL  &ht LGUI A  &ht LALT S  &ht LCTRL D  &ht LSHFT F  &kp G        &kp H  &ht RSHFT J  &ht RCTRL K  &ht RALT L  &ht RGUI SEMI  &kp SQT
                 &kp MINUS  &kp Z       &kp X       &kp C        &kp V        &kp B        &kp N  &kp M        &kp COMMA    &kp DOT     &kp FSLH       &kp GRAVE
-                                            &lt FUNC ESC  &lt NUM TAB  &lh SYM SPACE    &lt FUNC ENTER  &lh NAV BSPC  &tm RALT DEL
+                                                &kp ESC  &lt NAV TAB  &lt SYM SPACE    &lt NUM BSPC  &lt FUNC ENTER  &kp DEL
                 >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
-        game_layer {
-            bindings = <
-                                 &kp Q   &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I      &kp O    &kp P
-                &hm LALT EQUAL   &kp A   &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K      &kp L    &kp SEMI  &hm LGUI SQT
-                &hm LSHFT MINUS  &kp Z   &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &tog GAME
-                            &hm LCTRL ESC  &lt NUM TAB  &lh SYM SPACE    &lt FUNC ENTER  &lh NAV BSPC  &tm RALT DEL
-                >;
-        };
-
         nav_layer {
             bindings = <
-                       &none     &none     &none      &none      &none        &none         &none     &kp PG_DN  &kp PG_UP  &none
-                &none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp G        &kp LA(UP)    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp INS
-                &none  &none     &none     &none      &none      &none        &kp LA(DOWN)  &kp HOME  &kp END    &none      &none      &none
-                                                     &none  &none  &none    &none  &trans  &none
+                       &none     &none     &none      &none      &none        &none     &none     &kp UP    &none       &kp PG_UP
+                &none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none        &none     &kp LEFT  &kp DOWN  &kp RIGHT   &kp PG_DOWN  &kp INS
+                &none  &none     &none     &none      &none      &none        &none     &kp HOME  &kp END   &none       &none        &none
+                                                     &none  &trans  &none    &none  &none  &none
                 >;
         };
 
         number_layer {
             bindings = <
-                           &kp BSLH   &kp N7  &kp N8  &kp N9  &kp N0          &none  &none      &none      &none     &none
-                &kp LCTRL  &kp COMMA  &kp N4  &kp N5  &kp N6  &kp LBKT        &none  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &none
-                &kp DEL    &kp DOT    &kp N1  &kp N2  &kp N3  &kp RBKT        &none  &none      &none      &none     &none     &none
-                                                &kp GRAVE  &trans  &none    &none  &none  &none
+                            &kp PLUS    &kp N7  &kp N8  &kp N9   &kp N0     &none &none      &none      &none      &none
+                &kp STAR   &kp MINUS   &kp N4  &kp N5  &kp N6   &kp DEL    &none  &kp RSHFT   &kp RCTRL   &kp LALT    &kp RGUI  &none
+                &kp FSLH   &kp EQUAL   &kp N1  &kp N2  &kp N3   &kp ENTER  &none  &none       &none       &none       &none     &none
+                                        &none   &none   &none       &trans &none  &none
                 >;
         };
 
         symbol_layer {
             bindings = <
-                           &kp PIPE  &kp AMPS  &kp STAR   &kp LPAR   &kp RPAR        &none  &none      &none      &none     &none
-                &kp LCTRL  &kp LT    &kp DLLR  &kp PRCNT  &kp CARET  &kp LBRC        &none  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &none
-                &kp BSPC   &kp GT    &kp EXCL  &kp AT     &kp HASH   &kp RBRC        &none  &none      &none      &none     &none     &none
-                                                   &kp TILDE  &tog GAME  &trans    &none  &none  &none
+                           &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp CARET  &kp AMPS   &kp ASTRK  &kp GRAVE   &kp TILDE
+                &none  &kp DQT  &kp LBKT   &kp LBRC   &kp LPAR   &kp LT         &kp FSLH   &kp MINUS  &kp EQUAL  &kp COLON   &kp SEMI       &kp LCTRL
+                &none   &kp SQT     &kp RBKT   &kp RBRC   &kp RPAR   &kp GT         &kp BSLH   &kp UNDER  &kp PLUS   &kp PIPE  &kp QMARK     &kp BSPC
+                                                   &none  &none  &trans    &none  &none  &none
                 >;
         };
 
