@@ -29,7 +29,15 @@
             bindings = <&kp>, <&kp>;
         };
 
-        // Easy alt-tab with alt+backspace thumb using mod-morphs
+        // Easy alt-tab with alt+space thumb using mod-morphs
+        spctab: space_tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPACE_TAB"
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp TAB>;
+            mods = <MOD_LALT>;
+        };
+
         bstab: backspace_tab {
             compatible = "zmk,behavior-mod-morph";
             label = "BSPC_TAB";
@@ -59,6 +67,16 @@
         };
     };
 
+    // screenshot
+    macros {
+        screenshot: screenshot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LGUI &kp LSHFT &kp S>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -67,7 +85,7 @@
                            &kp Q       &kp W       &kp E        &kp R        &kp T        &kp Y  &kp U        &kp I        &kp O       &kp P
                 &kp EQUAL  &ht LGUI A  &ht LALT S  &ht LCTRL D  &ht LSHFT F  &kp G        &kp H  &ht RSHFT J  &ht RCTRL K  &ht RALT L  &ht RGUI SEMI  &kp SQT
                 &kp MINUS  &kp Z       &kp X       &kp C        &kp V        &kp B        &kp N  &kp M        &kp COMMA    &kp DOT     &kp FSLH       &kp GRAVE
-                                            &kp ESC  &lt NAV TAB  &lt SYM SPACE    &lt NUM BSPC  &lt FUNC ENTER  &kp DEL
+                                            &kp ESC  &lt NAV TAB  &spctab    &lt NUM BSPC  &lt FUNC ENTER  &kp DEL
                 >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -102,9 +120,9 @@
 
         function_layer {
             bindings = <
-                        &kp F1  &kp F2   &kp F3   &kp F4   &none           &bt BT_SEL 0  &bt BT_SEL 2  &kp C_MUTE       &kp C_BRI_UP    &none
-                &none   &kp F5  &kp F6   &kp F7   &kp F8   &none           &bt BT_SEL 1  &bt BT_SEL 3  &kp C_SNAPSHOT   &kp C_BRI_DN    &none  &out OUT_TOG
-                &none   &kp F9  &kp F10  &kp F11  &kp F12  &none           &bt BT_CLR    &bt BT_SEL 4  &kp PSCRN        &none           &none  &tog BOOT   
+                        &kp F1  &kp F2   &kp F3   &kp F4   &none           &bt BT_SEL 0  &bt BT_SEL 2  &kp C_MUTE   &kp C_BRI_UP    &none
+                &none   &kp F5  &kp F6   &kp F7   &kp F8   &none           &bt BT_SEL 1  &bt BT_SEL 3  &screenshot  &kp C_BRI_DN    &none  &out OUT_TOG
+                &none   &kp F9  &kp F10  &kp F11  &kp F12  &none           &bt BT_CLR    &bt BT_SEL 4  &kp PSCRN    &none           &none  &tog BOOT   
                                               &kp C_PREV  &kp C_PP &kp C_NEXT   &none  &trans  &none
                 >;
         };
