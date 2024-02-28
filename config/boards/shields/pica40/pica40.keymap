@@ -10,16 +10,6 @@
 #define SYM 4
 #define FUNC 5
 
-&mt {
-    tapping-term-ms = <160>;
-    flavor = "tap-preferred";
-};
-
-&lt {
-    tapping-term-ms = <160>;
-    flavor = "tap-preferred";
-};
-
 / {
 
     behaviors {
