@@ -30,13 +30,6 @@
         };
 
         // Easy alt-tab with alt+space thumb using mod-morphs
-        spctab: space_tab {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SPACE_TAB"
-            #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&kp TAB>;
-            mods = <MOD_LALT>;
-        };
 
         bstab: backspace_tab {
             compatible = "zmk,behavior-mod-morph";
@@ -123,7 +116,7 @@
                         &kp F1  &kp F2   &kp F3   &kp F4   &none           &bt BT_SEL 0  &bt BT_SEL 2  &kp C_MUTE   &kp C_BRI_UP    &none
                 &none   &kp F5  &kp F6   &kp F7   &kp F8   &none           &bt BT_SEL 1  &bt BT_SEL 3  &none          &kp C_BRI_DN    &none  &out OUT_TOG
                 &none   &kp F9  &kp F10  &kp F11  &kp F12  &none           &bt BT_CLR    &bt BT_SEL 4  &kp PSCRN    &none           &none  &tog BOOT   
-                                              &kp C_PREV  &kp C_PP &kp C_NEXT   &none  &trans  &none
+                                         &kp C_PREV  &kp C_PP &kp C_NEXT   &none  &trans  &none
                 >;
         };
         
