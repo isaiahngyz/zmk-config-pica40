@@ -71,26 +71,6 @@
                 , <&macro_tap &kp S>
                 , <&macro_release  &kp LGUI &kp LSHFT>;
         };
-
-        // left and right scroll
-        L_ctrl: left_ctrl {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp LEFT>
-                , <&macro_release &kp LCTRL>
-                ;
-        };
-        R_ctrl: right_ctrl {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp RIGHT>
-                , <&macro_release &kp LCTRL>
-                ;
-        };
     };
 
     keymap {
@@ -104,7 +84,7 @@
                                             &kp ESC  &lt NAV TAB  &lt_spc SYM 0    &lt NUM BSPC  &lt FUNC ENTER  &kp DEL
                 >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &R_ctrl &L_ctrl>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LC(RIGHT) LC(LEFT)>;
         };
 
         nav_layer {
