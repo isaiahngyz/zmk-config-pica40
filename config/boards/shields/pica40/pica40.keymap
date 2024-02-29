@@ -10,16 +10,6 @@
 #define FUNC 4
 #define BOOT 5
 
-&sensors {
-    left_config {
-        triggers-per-rotation = <2>;
-    };
-
-    right_config {
-        triggers-per-rotation = <20>;
-    };
-};
-
 &lt {
     tapping-term-ms = <220>;
     quick-tap-ms = <150>;
@@ -71,8 +61,8 @@
         };
     };
 
-    // screenshot
     macros {
+        // screenshot
         ss: screenshot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -81,6 +71,8 @@
                 , <&macro_tap &kp S>
                 , <&macro_release  &kp LGUI &kp LSHFT>;
         };
+
+
     };
 
     keymap {
