@@ -66,7 +66,7 @@
 		sensors = <&left_encoder &right_encoder>;
 
         left_config {
-            triggers-per-rotation = <8>;
+            triggers-per-rotation = <6>;
         };
 
         right_config {
