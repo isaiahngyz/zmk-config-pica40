@@ -57,7 +57,7 @@
         label = "RIGHT_ENCODER";
         a-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <24>;
+        steps = <12>;
         status = "disabled";
     };
 
@@ -66,7 +66,7 @@
 		sensors = <&left_encoder &right_encoder>;
 
         left_config {
-            triggers-per-rotation = <24>;
+            triggers-per-rotation = <12>;
         };
 
         right_config {
