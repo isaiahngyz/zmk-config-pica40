@@ -48,7 +48,8 @@
         label = "LEFT_ENCODER";
         a-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        resolution = <2>;
+        resolution = <24>;
+        //triggers-per-rotation = <20>
         status = "disabled";
     };
 
@@ -58,6 +59,7 @@
         a-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         resolution = <2>;
+        //triggers-per-rotation = <20>
         status = "disabled";
     };
 
