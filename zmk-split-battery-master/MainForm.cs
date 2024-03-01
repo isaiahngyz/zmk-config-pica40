@@ -315,7 +315,14 @@ namespace ZMKSplit
                 NotifyIcon.Text = _deviceName + "\n";
                 foreach (var battery in _batteryMonitor.Batteries.Values)
                 {
-                    NotifyIcon.Text += battery.Name + ": " + battery.Level + "%\n";
+                    if (battery.Name == "Peripheral 0") 
+                    { 
+                        NotifyIcon.Text += "Peripheral: " + battery.Level + "%\n";
+                    }
+                    else
+                    {
+                        NotifyIcon.Text += battery.Name + ": " + battery.Level + "%\n";
+                    }
                     minLevel = Math.Min(minLevel, battery.Level);
                 }
             }
