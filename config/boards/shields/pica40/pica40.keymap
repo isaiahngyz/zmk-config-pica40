@@ -29,7 +29,7 @@
             bindings = <&kp>, <&kp>;
         };
 
-        lh_NAV: layer_hold {
+        lh_NAV: layer_hold_nav {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_HOLD_NAV";
             #binding-cells = <2>;
