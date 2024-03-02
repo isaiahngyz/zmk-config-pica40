@@ -36,7 +36,7 @@
             tapping-term-ms = <220>;
             quick-tap-ms = <150>;
             flavor = "tap-preferred";
-            bindings = <&macro_press &mo NAV &kp F19>, <&kp>;
+            bindings = <&mo>, <&kp>;
         };
 
         // Easy alt-tab with alt+space thumb using mod-morphs
