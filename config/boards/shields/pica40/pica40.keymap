@@ -142,7 +142,7 @@
             timeout-ms = <50>;
             key-positions = <10 22>;
             layers = <QWERTY>;
-            bindings = <&tog BOOT &kp LS(F23)>;
+            bindings = <&kp CAPS>;
         };
 
         combo_boot {
