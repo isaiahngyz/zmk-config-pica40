@@ -125,13 +125,6 @@
                 , <&macro_release &mo FUNC>
                 , <&macro_tap &kp LS(F18)>;
         };
-
-        boot_out: boot_out {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &tog BOOT &kp LS(F18)>;
-        };
     };
 
     // caps
@@ -145,14 +138,6 @@
             layers = <QWERTY>;
             bindings = <&kp CAPS>;
         };
-
-        // boot layer
-        // combo_boot {
-        //     timeout-ms = <50>;
-        //     key-positions = <10 21 34 39>;
-        //     layers = <QWERTY>;
-        //     bindings = <&tog BOOT &kp LS(F23)>;
-        // };
 
         combo_help_QWERTY {
             bindings = <&kp LC(LA(LS(F18)))>;
@@ -245,7 +230,7 @@
             bindings = <
                        &none  &none  &none  &none  &bootloader     &bootloader  &none  &none  &none  &none 
                 &none  &none  &none  &none  &none  &none           &none        &none  &none  &none  &none  &none
-                &none  &none  &none  &none  &none  &none           &none        &none  &none  &none  &none  &boot_out
+                &none  &none  &none  &none  &none  &none           &none        &none  &none  &none  &none  &tog BOOT
                                      &none  &none  &none           &none        &none  &none
                 >;
         };
