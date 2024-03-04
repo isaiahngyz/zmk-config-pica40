@@ -126,7 +126,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &tog BOOT &kp LS(F23)>;
+                = <&macro_tap &tog BOOT>
+                , <&macro_press &kp LS(F23)>;
         };
 
         boot_out: boot_out {
