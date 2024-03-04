@@ -126,6 +126,13 @@
                 , <&macro_tap &kp LS(F18)>;
         };
 
+        boot_in: boot_in {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &tog BOOT &kp LS(F23)>;
+        };
+
         boot_out: boot_out {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -149,7 +156,7 @@
             timeout-ms = <50>;
             key-positions = <10 21 34 39>;
             layers = <QWERTY>;
-            bindings = <&tog BOOT &kp K>;
+            bindings = <&boot_in>;
         };
 
 
