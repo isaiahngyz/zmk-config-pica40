@@ -135,7 +135,7 @@
         combo_caps {
             timeout-ms = <50>;
             key-positions = <10 22>;
-            layers = <QWERTY>;
+            layers = <0>;
             bindings = <&kp CAPS>;
         };
 
