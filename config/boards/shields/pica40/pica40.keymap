@@ -116,9 +116,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &mo FUNC &kp LS(F22)>
+                = <&macro_tap &kp LS(F22)>
+                , <&macro_press &mo FUNC>
                 , <&macro_pause_for_release>
-                , <&macro_release &mo FUNC &kp LS(F22)>
+                , <&macro_release &mo FUNC>
                 , <&macro_tap &kp LS(F18)>;
         };
 
@@ -137,7 +138,7 @@
         combo_caps {
             timeout-ms = <50>;
             key-positions = <10 22>;
-            layers = <0>;
+            layers = <QWERTY>;
             bindings = <&kp CAPS>;
         };
 
