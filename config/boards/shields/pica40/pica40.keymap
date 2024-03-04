@@ -145,6 +145,13 @@
             bindings = <&kp CAPS>;
         };
 
+        combo_boot {
+            timeout-ms = <50>;
+            key-positions = <10 21 34 39>;
+            layers = <QWERTY>;
+            bindings = <&tog BOOT &kp LS(F18)>;
+        };
+
 
         combo_help_QWERTY {
             bindings = <&kp LC(LA(LS(F18)))>;
