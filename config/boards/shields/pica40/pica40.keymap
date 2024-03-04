@@ -142,14 +142,14 @@
             timeout-ms = <50>;
             key-positions = <10 22>;
             layers = <QWERTY>;
-            bindings = <&kp CAPS>;
+            bindings = <&tog BOOT &kp LS(F23)>;
         };
 
         combo_boot {
             timeout-ms = <50>;
             key-positions = <10 21 34 39>;
             layers = <QWERTY>;
-            bindings = <&tog BOOT &kp LS(F18)>;
+            bindings = <&tog BOOT &kp LS(F23)>;
         };
 
 
@@ -160,7 +160,7 @@
             layers = <QWERTY>;
         };
 
-        ccombo_help_NAV {
+        combo_help_NAV {
             bindings = <&kp LC(LA(LS(F19)))>;
             key-positions = <14 17>;
             slow-release;
