@@ -86,9 +86,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &mo NAV &kp LS(F19)>
+                = <&macro_tap &kp LS(F19)>
+                , <&macro_press &mo NAV>
                 , <&macro_pause_for_release>
-                , <&macro_release &mo NAV &kp LS(F19)>
+                , <&macro_release &mo NAV>
                 , <&macro_tap &kp LS(F18)>;
         };
 
@@ -96,9 +97,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &mo NUM &kp LS(F20)>
+                = <&macro_tap &kp LS(F20)>
+                , <&macro_press &mo NUM>
                 , <&macro_pause_for_release>
-                , <&macro_release &mo NUM &kp LS(F20)>
+                , <&macro_release &mo NUM>
                 , <&macro_tap &kp LS(F18)>;
         };
 
@@ -106,9 +108,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &mo SYM &kp LS(F21)>
+                = <&macro_tap &kp LS(F21)>
+                , <&macro_press &mo SYM>
                 , <&macro_pause_for_release>
-                , <&macro_release &mo SYM &kp LS(F21)>
+                , <&macro_release &mo SYM>
                 , <&macro_tap &kp LS(F18)>;
         };
 
