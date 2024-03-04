@@ -149,7 +149,7 @@
             timeout-ms = <50>;
             key-positions = <10 21 34 39>;
             layers = <QWERTY>;
-            bindings = <&tog BOOT &kp LS(F23)>;
+            bindings = <&tog BOOT &kp K>;
         };
 
 
